@@ -1,17 +1,14 @@
 package xyz.yuelai.learnfx.component.introduction;
 
-import com.sun.glass.ui.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
 import java.awt.*;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -34,14 +31,33 @@ public class IntroductionController implements Initializable {
 
     public void openUrl(ActionEvent actionEvent) {
         Hyperlink link = (Hyperlink) actionEvent.getSource();
-        String txt = link.getText();
+        String id = link.getId();
         try {
-            String urlTxt = txt.substring(txt.indexOf("：") + 1);
-            URI url = new URL(urlTxt).toURI();
-            Desktop.getDesktop().browse(url);
+            String uri = null;
+            if (id != null) {
+                // 打开qq群链接
+                if ("qq".equals(id)) {
+                    uri = "https://jq.qq.com/?_wv=1027&k=5JKWZSc";
+                }
+            } else {
+                // 资料链接
+                String txt = link.getText();
+                uri = txt.substring(txt.indexOf("：") + 1);
+            }
+            if (uri != null) {
+                Desktop.getDesktop().browse(new URI(uri));
+            }
         } catch (IOException | URISyntaxException e) {
             e.printStackTrace();
         }
+    }
 
+    public void joinGroup(ActionEvent actionEvent) {
+        try {
+            URI uri = new URI("https://jq.qq.com/?_wv=1027&k=5JKWZSc");
+            Desktop.getDesktop().browse(uri);
+        } catch (URISyntaxException | IOException e) {
+            e.printStackTrace();
+        }
     }
 }
