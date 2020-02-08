@@ -51,13 +51,4 @@ public class IntroductionController implements Initializable {
             e.printStackTrace();
         }
     }
-
-    public void joinGroup(ActionEvent actionEvent) {
-        try {
-            URI uri = new URI("https://jq.qq.com/?_wv=1027&k=5JKWZSc");
-            Desktop.getDesktop().browse(uri);
-        } catch (URISyntaxException | IOException e) {
-            e.printStackTrace();
-        }
-    }
 }

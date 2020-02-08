@@ -46,8 +46,8 @@ public class MainController implements Initializable {
                 fxmlPath = "/xyz/yuelai/learnfx/component/introduction/Introduction.fxml";
                 break;
             }
-            case "起步介绍1": {
-                fxmlPath = "/xyz/yuelai/learnfx/component/main/Main1.fxml";
+            case "Stage学习": {
+                fxmlPath = "/xyz/yuelai/learnfx/component/stage/Stage.fxml";
                 break;
             }
             default: {
