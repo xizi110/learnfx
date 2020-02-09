@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -165,6 +166,30 @@ public class StageController {
         scene.setFill(null);
         stage.setScene(scene);
         pane.getChildren().add(addCloseBtn(stage));
+        stage.show();
+    }
+
+    public void showAndWaitStage(ActionEvent event) {
+        Stage stage = new Stage();
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setTitle("showAndWait");
+        stage.setResizable(false);
+        stage.setWidth(400);
+        stage.setHeight(300);
+
+        Pane pane = new Pane();
+        pane.setStyle("-fx-background-color: transparent;");
+        Scene scene = new Scene(pane);
+        scene.setFill(null);
+        stage.setScene(scene);
+        Label label = new Label("此窗体是调用showAndWait显示的窗体，当关闭此窗体时，会继续执行后续代码，显示一个正常窗体。");
+        label.setWrapText(true);
+        label.setPrefWidth(300);
+        label.setLayoutY(30);
+        pane.getChildren().addAll(label, addCloseBtn(stage));
+        stage.showAndWait();
+        label.setText("正常调用show显示的窗体");
+        stage.setTitle("show");
         stage.show();
     }
 }

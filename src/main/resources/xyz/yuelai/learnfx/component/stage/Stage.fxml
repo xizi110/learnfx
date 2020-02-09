@@ -48,5 +48,12 @@
          </font>
       </Text>
       <Button layoutX="35.0" layoutY="320.0" mnemonicParsing="false" onAction="#showNotResizableStage" text="setResizable(false)" />
+      <Text layoutX="24.0" layoutY="372.0" strokeType="OUTSIDE" strokeWidth="0.0" text="showAndWait()">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Button layoutX="35.0" layoutY="383.0" mnemonicParsing="false" onAction="#showAndWaitStage" text="showAndWait" />
+      <Text layoutX="149.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" text="显示窗体，并暂停后续代码的执行，当窗体关闭时，继续后续代码的执行。可用于设计对话框。" />
    </children>
 </AnchorPane>
