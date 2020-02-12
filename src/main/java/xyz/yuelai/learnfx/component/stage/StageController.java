@@ -5,7 +5,10 @@ import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
@@ -17,6 +20,12 @@ import javafx.stage.StageStyle;
  * @date 2020/2/8 17:23
  */
 public class StageController {
+
+    @FXML
+    private TextField num1;
+    @FXML
+    private TextField num2;
+
 
     private double offsetX;
     private double offsetY;
@@ -169,6 +178,7 @@ public class StageController {
         stage.show();
     }
 
+    @FXML
     public void showAndWaitStage(ActionEvent event) {
         Stage stage = new Stage();
         stage.initModality(Modality.APPLICATION_MODAL);
@@ -190,6 +200,84 @@ public class StageController {
         stage.showAndWait();
         label.setText("正常调用show显示的窗体");
         stage.setTitle("show");
+        stage.show();
+    }
+
+
+    public void sum(ActionEvent event) {
+        String number1 = num1.getText();
+        String number2 = num2.getText();
+
+        if (!"".equals(number1) && !"".equals(number2)){
+            int sum = Integer.valueOf(number1) + Integer.valueOf(number2);
+            Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL);
+            // 数据存储在stage的properties中
+            stage.setUserData(sum);
+            int sum1 = (int) stage.getUserData();
+
+            VBox vBox = new VBox();
+            Text text = new Text("当需要在多个窗体之间传递值时，可以使用setUserData()将数据存储在stage中，需要用时，使用getUserData()获取即可。");
+            Button button = new Button(String.valueOf(sum1));
+            button.setPrefWidth(100);
+            button.setPrefHeight(100);
+            vBox.getChildren().addAll(text, button);
+            Scene scene = new Scene(vBox);
+            stage.setScene(scene);
+            stage.show();
+        }
+    }
+
+    public void maxMinClose(ActionEvent event) {
+        Stage stage = new Stage();
+        stage.initModality(Modality.APPLICATION_MODAL);
+
+        HBox hBox = new HBox(10);
+        Text text = new Text("最大化：setMaximized(true); 最小化：setIconified(true); 全屏：setFullScreen(true); 关闭：close()");
+        Button max = new Button("最大化");
+        Button min = new Button("最小化");
+        Button fullScreen = new Button("全屏");
+        Button close = new Button("关闭");
+
+        stage.maximizedProperty().addListener((observableValue, oldVal, newVal) -> {
+            if (newVal){
+                max.setText("取消最大化");
+            }else {
+                max.setText("最大化");
+            }
+        });
+
+        stage.fullScreenProperty().addListener((observableValue, oldVal, newVal) -> {
+            if (newVal){
+                fullScreen.setText("取消全屏");
+            }else {
+                fullScreen.setText("全屏");
+            }
+        });
+
+        max.setOnAction(event1 -> {
+            stage.setMaximized(stage.maximizedProperty().not().get());
+        });
+
+        min.setOnAction(event1 -> {
+            stage.setIconified(stage.iconifiedProperty().not().get());
+        });
+
+        fullScreen.setOnAction(event1 -> {
+            stage.setFullScreen(stage.fullScreenProperty().not().get());
+        });
+
+        close.setOnAction(event1 -> {
+            stage.close();
+        });
+
+
+        hBox.getChildren().addAll(max, min, fullScreen, close);
+
+        VBox vBox = new VBox();
+        vBox.getChildren().addAll(text, hBox);
+        Scene scene = new Scene(vBox);
+        stage.setScene(scene);
         stage.show();
     }
 }

@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -48,12 +49,31 @@
          </font>
       </Text>
       <Button layoutX="35.0" layoutY="320.0" mnemonicParsing="false" onAction="#showNotResizableStage" text="setResizable(false)" />
-      <Text layoutX="24.0" layoutY="372.0" strokeType="OUTSIDE" strokeWidth="0.0" text="showAndWait()">
+      <Text layoutX="24.0" layoutY="379.0" strokeType="OUTSIDE" strokeWidth="0.0" text="showAndWait()">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Text>
-      <Button layoutX="35.0" layoutY="383.0" mnemonicParsing="false" onAction="#showAndWaitStage" text="showAndWait" />
-      <Text layoutX="149.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" text="显示窗体，并暂停后续代码的执行，当窗体关闭时，继续后续代码的执行。可用于设计对话框。" />
+      <Button layoutX="37.0" layoutY="402.0" mnemonicParsing="false" onAction="#showAndWaitStage" text="showAndWait" />
+      <Text layoutX="149.0" layoutY="378.0" strokeType="OUTSIDE" strokeWidth="0.0" text="显示窗体，并暂停后续代码的执行，当窗体关闭时，继续后续代码的执行。可用于设计对话框。" />
+      <Text layoutX="24.0" layoutY="455.0" strokeType="OUTSIDE" strokeWidth="0.0" text="窗体传值">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Button layoutX="182.0" layoutY="471.0" mnemonicParsing="false" onAction="#sum" text="sum" />
+      <TextField fx:id="num1" layoutX="39.0" layoutY="471.0" prefWidth="50.0" />
+      <Text layoutX="95.0" layoutY="488.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="num2" layoutX="113.0" layoutY="471.0" prefWidth="50.0" />
+      <Text layoutX="24.0" layoutY="521.0" strokeType="OUTSIDE" strokeWidth="0.0" text="窗体最大化，最小化，全屏，关闭">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Button layoutX="41.0" layoutY="539.0" mnemonicParsing="false" onAction="#maxMinClose" text="最大化、最小化、全屏、关闭" />
    </children>
 </AnchorPane>
