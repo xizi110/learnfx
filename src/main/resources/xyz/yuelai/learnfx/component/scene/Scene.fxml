@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="636.0" spacing="5.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="xyz.yuelai.learnfx.component.scene.SceneController">
+   <children>
+      <Label alignment="TOP_LEFT" text="Scene 场景  表示Stage中的视觉内容，由可视节点构成">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button mnemonicParsing="false" onAction="#showNoSceneStage" text="没有场景的stage" />
+      <Label alignment="TOP_LEFT" text="一个场景只能附加到一个stage，一个stage也只能有一个场景">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
+      </Label>
+      <ButtonBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="200.0">
+         <buttons>
+            <Button mnemonicParsing="false" onAction="#showOneStage" text="窗体2" />
+            <Button mnemonicParsing="false" onAction="#showOneStage" text="窗体1" />
+         </buttons>
+      </ButtonBar>
+      <Label alignment="TOP_LEFT" text="重新调整场景大小  场景必须有一个根节点，当根结点大小发生改变，则场景大小也会发生改变">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
+      </Label>
+      <Button mnemonicParsing="false" onAction="#resizeScene" text="resize Scene" />
+      <Label alignment="TOP_LEFT" text="获取场景中的焦点所有者">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
+      </Label>
+      <Button mnemonicParsing="false" onAction="#getFocusOwner" text="getFocusOwner" />
+      <Label alignment="TOP_LEFT" text="设置场景中的焦点">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
+      </Label>
+      <Button mnemonicParsing="false" onAction="#setFocusOwner" text="setFocusOwner" />
+      <Label alignment="TOP_LEFT" text="场景的其他注意事项：">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
+      </Label>
+      <VBox prefWidth="636.0" spacing="5.0">
+         <children>
+            <Label alignment="TOP_LEFT" text="getWindow()；可以获取此场景的stage">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_LEFT" text="setUserData；可以设置用户数据，在之后getUserData()获取">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_LEFT" text="setFill()；设置场景背景色">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_LEFT" text="getStylesheets()；获取样式表，并可以添加样式表">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_LEFT" text="getRoot()；获取此场景下的根节点">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+      </VBox>
+   </children>
+</VBox>

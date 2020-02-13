@@ -31,7 +31,7 @@
                         <Button mnemonicParsing="false" onAction="#loadView" prefHeight="40.0" prefWidth="180.0"
                                 text="Stage学习"/>
                         <Button mnemonicParsing="false" onAction="#loadView" prefHeight="40.0" prefWidth="180.0"
-                                text="起步介绍2"/>
+                                text="Scene学习"/>
                         <Button mnemonicParsing="false" onAction="#loadView" prefHeight="40.0" prefWidth="180.0"
                                 text="起步介绍3"/>
                         <Button mnemonicParsing="false" onAction="#loadView" prefHeight="40.0" prefWidth="180.0"

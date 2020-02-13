@@ -50,6 +50,10 @@ public class MainController implements Initializable {
                 fxmlPath = "/xyz/yuelai/learnfx/component/stage/Stage.fxml";
                 break;
             }
+            case "Scene学习": {
+                fxmlPath = "/xyz/yuelai/learnfx/component/scene/Scene.fxml";
+                break;
+            }
             default: {
                 fxmlPath = null;
             }
